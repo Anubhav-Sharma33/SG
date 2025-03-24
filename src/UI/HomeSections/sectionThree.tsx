@@ -8,7 +8,7 @@ export default function SectionThree() {
           Find your dream property in the city you're searching in
         </h1>
       </div>
-      <div className="flex grid m-auto p-6 gap-x-6 gap-y-4 grid-cols-2 md:grid-cols-4 max-w-[1340px]">
+      <div className="flex grid m-auto p-10 gap-x-6 gap-y-4 grid-cols-2 md:grid-cols-4 max-w-[1340px]">
         <HomeSectionThreeDiv image = {"https://ecis.in/apis/star-estate-API/star_estate/city/delhi1.webp"}/>
         <HomeSectionThreeDiv image = {"https://ecis.in/apis/star-estate-API/star_estate/city/delhi1.webp"}/>
         <HomeSectionThreeDiv image = {"https://ecis.in/apis/star-estate-API/star_estate/city/delhi1.webp"}/>
