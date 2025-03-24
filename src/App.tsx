@@ -9,7 +9,7 @@ function App(){
   return (
     <>
     <Header/>
-    <main className="relative">
+    <main>
       <Banner/>
       <SectionOne/>
       <SectionThree/>
