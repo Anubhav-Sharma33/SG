@@ -1,5 +1,4 @@
 import { HomeSectionFourDiv } from "../../Components/homeSectionFourDiv";
-import HomeSectionThreeDiv from "../../Components/homeSectionThreeDiv";
 
 export default function SectionFour() {
   return (

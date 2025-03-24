@@ -1,4 +1,3 @@
-import HomeSectionOneImage from "../../Components/homeSectionOneImage";
 import HomeSectionThreeDiv from "../../Components/homeSectionThreeDiv";
 
 export default function SectionThree() {
