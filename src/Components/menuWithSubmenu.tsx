@@ -2,7 +2,7 @@ export default function MenuWithSubMenu({ list, index, openIndex, handleToggle }
     const isOpen = openIndex === index;
   
     return (
-      <li>
+        <li className={list.title !== "MEDIA" ? "sm:hidden" : ""}>
         <details className="group [&_summary::-webkit-details-marker]:hidden" open={isOpen}>
           <summary
             onClick={(e) => {

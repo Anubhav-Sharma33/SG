@@ -71,9 +71,13 @@ export const list2 = {
   ],
 };
 export const list3 = {
-  title: "Projects",
+  title: "PROJECTS",
   list: ["Resedential", "Commercial", "New Launches"],
 };
+export const list4 ={
+  title:"MEDIA",
+  list: ["Awards","News","Blogs","Events","Advertisements"]
+}
 
 
 export default function Navbar() {
