@@ -15,7 +15,6 @@ function App(){
       <SectionOne/>
       <SectionThree/>
       <SectionFour/>
-      <Togglemenu/>
     </main>
     <Footer/>
     </>
