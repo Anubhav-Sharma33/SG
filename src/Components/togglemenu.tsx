@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import MenuWithSubMenu from "./menuWithSubmenu";
 import { list1, list2, list3, list4 } from "../UI/GeneralSections/navbar";
+import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
 
 export default function Togglemenu() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -8,7 +9,6 @@ export default function Togglemenu() {
 
   useEffect(() => {
     const handleResize = () => {
-      // Tailwind's lg breakpoint is typically 1024px
       setIsLargeScreen(window.innerWidth >= 1024);
     };
 
@@ -38,45 +38,28 @@ export default function Togglemenu() {
           </a>
         </li>
 
-        {/* Pass the screen size info down to each submenu */}
-        <MenuWithSubMenu 
-          list={list1} 
-          index={0} 
-          openIndex={openIndex} 
-          handleToggle={handleToggle} 
-          isLargeScreen={isLargeScreen} 
-        />
-        <MenuWithSubMenu 
-          list={list2} 
-          index={1} 
-          openIndex={openIndex} 
-          handleToggle={handleToggle} 
-          isLargeScreen={isLargeScreen} 
-        />
-        <MenuWithSubMenu 
-          list={list3} 
-          index={2} 
-          openIndex={openIndex} 
-          handleToggle={handleToggle} 
-          isLargeScreen={isLargeScreen} 
-        />
-        <MenuWithSubMenu 
-          list={list4} 
-          index={3} 
-          openIndex={openIndex} 
-          handleToggle={handleToggle} 
-          isLargeScreen={isLargeScreen} 
-        />
+        <MenuWithSubMenu list={list1} index={0} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+        <MenuWithSubMenu list={list2} index={1} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+        <MenuWithSubMenu list={list3} index={2} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+        <MenuWithSubMenu list={list4} index={3} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
 
         <li>
-          <a
-            href="#"
-            className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-          >
+          <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
             Careers
           </a>
         </li>
       </ul>
+
+      <hr className="border-gray-200" />
+
+      <div className="flex justify-center gap-4 p-3">
+        <a href="#" className="text-blue-600 hover:text-blue-800"><FaFacebook size={20} /></a>
+        <a href="#" className="text-pink-500 hover:text-pink-700"><FaInstagram size={20} /></a>
+        <a href="#" className="text-blue-500 hover:text-blue-700"><FaLinkedin size={20} /></a>
+        <a href="#" className="text-gray-800 hover:text-black"><FaXTwitter size={20} /></a>
+        <a href="#" className="text-red-600 hover:text-red-800"><FaYoutube size={20} /></a>
+      </div>
     </div>
   );
 }
+
