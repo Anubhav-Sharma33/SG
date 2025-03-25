@@ -3,12 +3,12 @@
 //2.Megamenu Setup
 //3.Toggler setup
 //4.Split code into Components
-import { useState } from "react";
+import { useState,useEffect,useRef } from "react";
 import Megamenu from "../../Components/megamenu";
 import Togglemenu from "../../Components/togglemenu";
 
 
-const list1 = {
+export const list1 = {
   title: "CITY",
   list: [
     "Agra",
@@ -25,7 +25,7 @@ const list1 = {
     "Chandigarh",
   ],
 };
-const list2 = {
+export const list2 = {
   title: "BUILDER",
   list: [
     "ABA Corp",
@@ -70,7 +70,7 @@ const list2 = {
     "Piramal Realty",
   ],
 };
-const list3 = {
+export const list3 = {
   title: "Projects",
   list: ["Resedential", "Commercial", "New Launches"],
 };
@@ -78,6 +78,24 @@ const list3 = {
 
 export default function Navbar() {
   const [isOpen,setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleOutsideClick(event: MouseEvent) {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    }
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    } else {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
 
   function handleClick(){
     setIsOpen((cur:any)=>{
@@ -163,7 +181,7 @@ export default function Navbar() {
           <span className="border-r-2 border-gray-300 h-6" />
 
           {/* Hamburger Menu Toggler */}
-          <div className="menuBtn cursor-pointer px-3 py-4" title="Toggle Menu" onClick={handleClick}>
+          <div className="menuBtn cursor-pointer px-3 py-4" ref = {menuRef} title="Toggle Menu" onClick={handleClick}>
             <span
               id="menuLine1"
               className="block w-6 h-0.5 bg-black mb-1"
