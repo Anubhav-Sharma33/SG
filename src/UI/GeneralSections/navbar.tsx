@@ -3,8 +3,11 @@
 //2.Megamenu Setup
 //3.Toggler setup
 //4.Split code into Components
-
+import { useState } from "react";
 import Megamenu from "../../Components/megamenu";
+import Togglemenu from "../../Components/togglemenu";
+
+
 const list1 = {
   title: "CITY",
   list: [
@@ -71,10 +74,21 @@ const list3 = {
   title: "Projects",
   list: ["Resedential", "Commercial", "New Launches"],
 };
+
+
 export default function Navbar() {
+  const [isOpen,setIsOpen] = useState(false);
+
+  function handleClick(){
+    setIsOpen((cur:any)=>{
+      cur = !cur;
+      return cur;
+    })
+  }
+
   return (
-    <div className=" w-full bg-white shadow">
-      <div className="relative w-full mx-auto flex items-center px-10 justify-between max-w-[1340px]">
+    <div className="relative  w-full bg-white shadow">
+      <div className="w-full mx-auto flex items-center px-4 justify-between max-w-[1340px]">
         {/* Left section: Logo & Nav links */}
         <div className="flex items-center space-x-8">
           <div id="logo" className="text-xl font-bold">
@@ -124,7 +138,7 @@ export default function Navbar() {
             href="/channel-partners-registration"
             target="_blank"
             rel="noopener noreferrer"
-            className="searchBtn px-3 py-2 text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
+            className="searchBtn px-3 py-4 text-gray-700 hover:text-gray-900 font-medium transition-colors flex items-center space-x-2"
             title="Register as a Channel Partner"
           >
             <span className="hidden lg:inline">
@@ -138,7 +152,7 @@ export default function Navbar() {
 
           {/* Search Property */}
           <button
-            className="searchBtn px-3 py-2 text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer flex items-center space-x-2"
+            className="searchBtn px-3 py-4 text-gray-700 hover:text-gray-900 font-medium transition-colors cursor-pointer flex items-center space-x-2"
             title="Search Property"
           >
             <span className="hidden lg:inline">Search Property</span>
@@ -149,7 +163,7 @@ export default function Navbar() {
           <span className="border-r-2 border-gray-300 h-6" />
 
           {/* Hamburger Menu Toggler */}
-          <div className="menuBtn cursor-pointer px-3 py-2" title="Toggle Menu">
+          <div className="menuBtn cursor-pointer px-3 py-4" title="Toggle Menu" onClick={handleClick}>
             <span
               id="menuLine1"
               className="block w-6 h-0.5 bg-black mb-1"
@@ -162,6 +176,7 @@ export default function Navbar() {
               id="menuLine3"
               className="block w-6 h-0.5 bg-black mb-1"
             ></span>
+            {isOpen && <Togglemenu/>}
           </div>
         </div>
       </div>
