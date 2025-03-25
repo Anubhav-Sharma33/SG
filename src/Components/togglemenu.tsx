@@ -10,7 +10,7 @@ export default function Togglemenu() {
   };
 
   return (
-    <ul className="space-y-1 absolute top-full right-0 z-1000 bg-white w-[290px] max-h-[50vh] overflow-scroll"
+    <ul className="space-y-1 absolute top-full right-0 z-1000 bg-white w-full sm:w-[290px] max-h-[50vh] overflow-scroll"
       onClick={(e) => {
         e.stopPropagation();
       }}>
