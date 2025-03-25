@@ -31,7 +31,6 @@ export default function MenuWithSubMenu({
               handleToggle(index);
             }
           }}
-          // Change the cursor if it's not meant to be clickable
           className={`${alwaysOpen ? "cursor-default" : "cursor-pointer"} flex items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700`}
         >
           <span className="text-sm font-medium">{list.title}</span>

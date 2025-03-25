@@ -23,35 +23,55 @@ export default function Togglemenu() {
 
   return (
     <div
-      className="absolute top-full right-0 z-1000 bg-white w-[290px] max-h-[400px] overflow-y-auto shadow-lg border border-gray-200 rounded-lg"
+      className="
+        absolute 
+        top-full 
+        right-0 
+        z-1000 
+        bg-white 
+        w-[290px] 
+        /* For small screens, cap the height to the viewport minus some padding */
+        max-h-[calc(100vh-5rem)] 
+        /* For large screens (lg:), fix it at 400px */
+        lg:max-h-[400px] 
+        shadow-lg 
+        border 
+        border-gray-200 
+        rounded-lg 
+        flex 
+        flex-col
+      "
       onClick={(e) => e.stopPropagation()}
     >
-      <ul className="space-y-1 p-2">
-        <li>
-          <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-700">
-            Home
-          </a>
-        </li>
-        <li>
-          <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-700">
-            About Us
-          </a>
-        </li>
+      {/* Scrollable menu items */}
+      <div className="flex-grow overflow-y-auto">
+        <ul className="space-y-1 p-2">
+          <li>
+            <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-700">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-700">
+              About Us
+            </a>
+          </li>
 
-        <MenuWithSubMenu list={list1} index={0} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
-        <MenuWithSubMenu list={list2} index={1} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
-        <MenuWithSubMenu list={list3} index={2} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
-        <MenuWithSubMenu list={list4} index={3} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+          <MenuWithSubMenu list={list1} index={0} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+          <MenuWithSubMenu list={list2} index={1} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+          <MenuWithSubMenu list={list3} index={2} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
+          <MenuWithSubMenu list={list4} index={3} openIndex={openIndex} handleToggle={handleToggle} isLargeScreen={isLargeScreen} />
 
-        <li>
-          <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-            Careers
-          </a>
-        </li>
-      </ul>
+          <li>
+            <a href="#" className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+              Careers
+            </a>
+          </li>
+        </ul>
+      </div>
 
+      {/* Social icons remain at the bottom */}
       <hr className="border-gray-200" />
-
       <div className="flex justify-center gap-4 p-3">
         <a href="#" className="text-blue-600 hover:text-blue-800"><FaFacebook size={20} /></a>
         <a href="#" className="text-pink-500 hover:text-pink-700"><FaInstagram size={20} /></a>
@@ -63,3 +83,4 @@ export default function Togglemenu() {
   );
 }
 
+// (Your MenuWithSubMenu component stays the same)

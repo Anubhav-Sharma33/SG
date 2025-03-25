@@ -104,6 +104,7 @@ export default function Navbar() {
   function handleClick(){
     setIsOpen((cur:any)=>{
       cur = !cur;
+      console.log(isOpen);
       return cur;
     })
   }
