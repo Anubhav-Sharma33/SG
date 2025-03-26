@@ -62,7 +62,7 @@ const menu2 = {
 export default function FooterNavigation() {
   return (
     <div className="w-full bg-black text-white">
-      <div className="flex flex-col gap-y-4 sm:flex-row sm:gap-y-0 w-full max-w-[1340px] px-10 py-6 mx-auto">
+      <div className="flex flex-col gap-y-4 sm:flex-row sm:gap-y-0 w-full max-w-[95%] py-10 px-3 mx-auto">
         <FooterMenu menu={menu1} />
         <FooterMenu menu={menu2} />
         <FooterMenu menu={menu3} />

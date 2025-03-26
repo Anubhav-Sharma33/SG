@@ -3,7 +3,7 @@ export default function FooterMenu(props: any) {
     return (
       <div className="flex flex-1 flex-col px-2 py-1">
         <span className="text-sm font-medium text-white">{title}</span>
-        <ul className={`flex mt-1 ${social  ? "flex-row space-x-2" : "flex-row space-x-4 space-y-2 flex-wrap sm:flex-col sm:space-y-2 sm:flex-nowrap"}`}>
+        <ul className={`flex mt-1 ${social  ? "flex-row gap-x-2" : "flex-row gap-x-4 gap-y-2 flex-wrap sm:flex-col sm:gap-y-2 sm:flex-nowrap"}`}>
           {submenu.map((cur: any, index: number) => {
             return (
               <li key={index} className="border border-white rounded-full px-2 sm:border-none sm:px-0">
