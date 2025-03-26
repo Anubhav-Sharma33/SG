@@ -24,7 +24,7 @@ const Banner = () => {
   }, [img.length]);
 
   return (
-    <div className="relative w-full h-[90vh] xl:h-[70vh] overflow-hidden flex">
+    <div className="relative w-full h-[80vh] xl:h-[70vh] overflow-hidden flex">
       {/* Background Image */}
       <img
         src={img[index]}
@@ -42,21 +42,21 @@ const Banner = () => {
       </div>
 
       {/* Content Container positioned 30% from the top */}
-      <div className="absolute top-[25%] left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center text-center px-4 w-full ">
+      <div className="absolute top-[25%] left-1/2 transform -translate-x-1/2 z-30 flex flex-col items-center text-center w-full ">
         <div
           id="main-container"
           className="w-full flex justify-center items-center"
         >
           <div
             id="main-flex"
-            className="w-full mx-10 lg:w-[960px] flex justify-center items-center"
+            className="w-full lg:w-[960px] flex justify-center items-center px-4"
           >
             <div
               id="inner-outer-div"
               className="flex flex-col justify-center items-center w-full max-w-[850px]"
             >
               {/* Heading */}
-              <div className="w-full text-center lg:text-left">
+              <div className="w-full text-center lg:text-left px-2">
                 <h1 className="text-lg md:text-lg lg:text-xl font-bold text-gray-800 mb-0 uppercase tracking-wider drop-shadow-sm">
                   You Deserve The Best
                 </h1>
