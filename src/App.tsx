@@ -16,7 +16,7 @@ import Careers from "./Pages/Careers";
 import ProjectsListing from "./Pages/Projects/ProjectsListing";
 import ProjectType from "./Pages/Projects/ProjectTypeListing";
 import ProjectDetails from "./Pages/Projects/ProjectDetails";
-import Homepage from "./Pages/Homepage.tsx";
+import Home from "./Components/Homepage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         index:true,
-        element: <Homepage/>,
+        element: <Home/>,
       },
       {
         path: "city/:cityName",
