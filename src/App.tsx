@@ -16,7 +16,7 @@ import Careers from "./Pages/Careers";
 import ProjectsListing from "./Pages/Projects/ProjectsListing";
 import ProjectType from "./Pages/Projects/ProjectTypeListing";
 import ProjectDetails from "./Pages/Projects/ProjectDetails";
-import Homepage from "./Pages/Homepage";
+import Homepage from "./Pages/Homepage.tsx";
 
 const router = createBrowserRouter([
   {
