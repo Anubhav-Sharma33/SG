@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
-import Homepage from "./Pages/Homepage";
 import CityListing from "./Pages/City/CityListing";
 import BuilderListing from "./Pages/Builder/BuilderListing";
 import AboutUs from "./Pages/AboutUs";
@@ -17,6 +16,7 @@ import Careers from "./Pages/Careers";
 import ProjectsListing from "./Pages/Projects/ProjectsListing";
 import ProjectType from "./Pages/Projects/ProjectTypeListing";
 import ProjectDetails from "./Pages/Projects/ProjectDetails";
+import Homepage from "./Pages/Homepage";
 
 const router = createBrowserRouter([
   {
